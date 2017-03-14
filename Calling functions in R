@@ -1,0 +1,45 @@
+
+
+# Running the first function. Select it and run. Now
+# we can use its name:
+HelloMsg()
+
+NumAinCourseTitle()
+c<-str_c("The number of a's in the course title: ",NumAinCourseTitle())
+c
+
+RandomHPTitle()
+RandomHPTitle()
+RandomHPTitle()
+RandomHPTitle()
+
+HPTitle(4)
+HPTitle(3)
+HPTitle(7)
+
+
+HPTitleLetterCounter("x")
+HPTitleLetterCounter("z")
+HPTitleLetterCounter("a")
+HPTitleLetterCounter("H")
+
+CounterHPTitle("a",1)
+CounterHPTitle("e",1)
+CounterHPTitle("t",4)
+CounterHPTitle("H",7)
+
+### Techniques ####
+
+# Which element is largest
+x<-c(7,12,4,37,6)
+which.max(x)
+
+# Length of a string
+s<-"abcdefg"
+sum(str_length(s))
+
+#HWFuncton1
+RandomHPTitle1("G")
+
+
+
