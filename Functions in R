@@ -1,0 +1,166 @@
+
+
+# R Function Syntax
+MultiplyTwoNumbers<-function(x,y)
+{
+  z<-x*y
+  print("The numbers have been multiplied!")
+  return (z)
+}
+
+# No input parameters or return value output
+HelloMsg<-function()
+{
+  print("Hello World!")
+  print("Who started this Hello World crap?")
+  print("Certainly we can come up with a better message.")
+  print("How about?")
+  print("     Go Cards!")
+  print("     Live free. Ride hard!")
+  print("     Where is the bathroom?")
+  print("     Nothing up my sleeve...")
+  print("Maybe you can do better.")
+  print("Try!")
+}
+
+# No input parameters; Return vaule
+NumAinCourseTitle<-function()
+{
+  # Counts the number of lower case a's in the 
+  # course title.
+  
+  t<-"IST 3420 - Data Science and Management"
+  n<-str_count(t,"a")
+  return(n)
+}
+
+# No number as input; No return value
+# (Does print messages.)
+RandomHPTitle<-function()
+{
+  # Returns the title of the Harry Potter book 
+  # chosen at random
+  
+  hpTitle<-as.vector(7) # Creates spaces for vector
+  hpTitle[1]="Harry Potter and the Philosopher's Stone"
+  hpTitle[2]="Harry Potter and the Chamber of Secrets"
+  hpTitle[3]="Harry Potter and the Prisoner of Azkaban"
+  hpTitle[4]="Harry Potter and the Goblet of Fire"
+  hpTitle[5]="Harry Potter and the Order of the Phoenix"
+  hpTitle[6]="Harry Potter and the Half-Blood Prince"
+  hpTitle[7]="Harry Potter and the Deathly Hallows"
+  
+  book<-sample(1:7,1)
+  print(hpTitle[book])
+}
+
+# One number as input; No return value
+# (Does print messages.)
+HPTitle<-function(book)
+{
+  # Returns the title of the Harry Potter book 
+  # As specified by the user in the parameter
+  
+  hpTitle<-as.vector(7) # Creates spaces for vector
+  hpTitle[1]="Harry Potter and the Philosopher's Stone"
+  hpTitle[2]="Harry Potter and the Chamber of Secrets"
+  hpTitle[3]="Harry Potter and the Prisoner of Azkaban"
+  hpTitle[4]="Harry Potter and the Goblet of Fire"
+  hpTitle[5]="Harry Potter and the Order of the Phoenix"
+  hpTitle[6]="Harry Potter and the Half-Blood Prince"
+  hpTitle[7]="Harry Potter and the Deathly Hallows"
+  
+  # Error Checking: User data can be corrupt
+  if ((book<1)|(book>7))
+  {
+    r<-"The given book number is out of range."
+  } else
+  {
+    r<-hpTitle[book]
+  }
+  print(r)
+}
+# One input parameter and one return value
+HPTitleLetterCounter<-function(letter)
+{
+  # Returns the number of occurences of a given
+  # letter in all titles
+  
+  hpTitle<-as.vector(7) # Creates spaces for vector
+  hpTitle[1]="Harry Potter and the Philosopher's Stone"
+  hpTitle[2]="Harry Potter and the Chamber of Secrets"
+  hpTitle[3]="Harry Potter and the Prisoner of Azkaban"
+  hpTitle[4]="Harry Potter and the Goblet of Fire"
+  hpTitle[5]="Harry Potter and the Order of the Phoenix"
+  hpTitle[6]="Harry Potter and the Half-Blood Prince"
+  hpTitle[7]="Harry Potter and the Deathly Hallows"
+  
+  totalTimes<-0
+  book<-1
+  
+  while(book<=7)
+  {
+    totalTimes = totalTimes +
+      str_count(hpTitle[book],letter)
+    
+    book=book + 1
+  }
+  return(totalTimes)
+}
+# Total number of letters in given title
+# One input parameter and one return value
+CounterHPTitle<-function(letter,book)
+{
+  # Returns the number of occurences of a given
+  # letter in a specified title
+  
+  hpTitle<-as.vector(7) # Creates spaces for vector
+  hpTitle[1]="Harry Potter and the Philosopher's Stone"
+  hpTitle[2]="Harry Potter and the Chamber of Secrets"
+  hpTitle[3]="Harry Potter and the Prisoner of Azkaban"
+  hpTitle[4]="Harry Potter and the Goblet of Fire"
+  hpTitle[5]="Harry Potter and the Order of the Phoenix"
+  hpTitle[6]="Harry Potter and the Half-Blood Prince"
+  hpTitle[7]="Harry Potter and the Deathly Hallows"
+  
+  totalChars<-0
+   
+  
+  # Error Checking: User data can be corrupt
+  if ((book<1)|(book>7))
+  {
+    r<-"The given book number is out of range."
+  } else
+  {
+    r<-hpTitle[book]
+    totalChars<-str_count(r,letter)
+  }
+  print(r)
+  return(totalChars)
+}
+
+#only one input for number letters
+RandomHPTitle1<-function(letter)
+{
+  # Returns the number of occurences of a given
+  # letter randomly
+  
+  hpTitle<-as.vector(7) # Creates spaces for vector
+  hpTitle[1]="Harry Potter and the Philosopher's Stone"
+  hpTitle[2]="Harry Potter and the Chamber of Secrets"
+  hpTitle[3]="Harry Potter and the Prisoner of Azkaban"
+  hpTitle[4]="Harry Potter and the Goblet of Fire"
+  hpTitle[5]="Harry Potter and the Order of the Phoenix"
+  hpTitle[6]="Harry Potter and the Half-Blood Prince"
+  hpTitle[7]="Harry Potter and the Deathly Hallows"
+  
+  totalChars<-0
+  
+  {
+  book<-sample(1:7,1)
+  print(hpTitle[book])
+  }
+  r<-hpTitle[book]
+  totalChars<-str_count(r,letter)
+  return(totalChars)
+}
